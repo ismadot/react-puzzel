@@ -8,6 +8,7 @@ import { Image } from './store/sagas/interface';
 function App() {
   const [animalElements, setAnimalElments] = useState<string[][]>([]);
   const [helpFlag, setHelpFlag] = useState<boolean>(false);
+  const [missCount, setMissCount] = useState<number>(0);
   const { loading, data, error } = useSelector(
     (state: RootState) => state.app.requestAnimalList,
   );
@@ -33,6 +34,7 @@ function App() {
     animalCouples.forEach((element) => {
       element[0].classList.remove('flip');
     });
+    setMissCount((prevState) => prevState + 1);
   };
 
   const handlerAnimalClick = (element: HTMLDivElement, uuid: string) => {
@@ -46,6 +48,7 @@ function App() {
   const handlerPlayBtnClick = () => {
     dispatch(getAnimalListStart(callAnimals));
     setCouples([]);
+    setMissCount(0);
   };
 
   useEffect(() => {
@@ -91,11 +94,13 @@ function App() {
             <>
               <div className="col-xs-12">
                 <h1>
-                  {' '}
                   {couples.length === callAnimals
                     ? 'Congratulations 🎊, you win 🎉'
                     : `${couples.length} out of ${callAnimals}`}
                 </h1>
+                <h2>
+                  {`${missCount} Miss`}
+                </h2>
               </div>
               {animalElements.map(([url, title, uuid], i) => (
                 <div
