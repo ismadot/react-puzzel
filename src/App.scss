@@ -30,6 +30,20 @@ img {
     }
   }
 }
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 .container-card {
   width: 100%;
   display: flex;

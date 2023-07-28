@@ -89,6 +89,17 @@ function App() {
             </div>
           )}
         </div>
+          {data === null && loading && (
+            <>
+            <div className="row col-xs-12 center-xs">
+              <div className="col-xs-4">
+                  <h1 className="rotate">🔄</h1>
+                  <h2>loading...</h2>
+              </div>
+
+            </div>
+            </>
+          )}
         <div className="animal-list row col-xs-12">
           {data !== null && !loading && animalElements.length && (
             <>
