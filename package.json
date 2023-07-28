@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "test": "jest --config jest.config.cjs",
     "gh-pages": "gh-pages -d docs"
   },
   "dependencies": {
@@ -20,8 +21,13 @@
     "redux-saga": "^1.2.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.0.11",
+    "@types/redux-mock-store": "^1.0.3",
     "@types/redux-saga": "^0.10.5",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.0.1",
@@ -30,7 +36,12 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "gh-pages": "^5.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.6.2",
+    "jest-environment-jsdom": "^29.6.2",
+    "redux-mock-store": "^1.5.4",
     "sass": "^1.64.1",
+    "ts-jest": "^29.1.1",
     "typescript": "^4.4.4",
     "vite": "^4.3.9"
   }
